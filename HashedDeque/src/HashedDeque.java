@@ -1,4 +1,6 @@
 import java.util.LinkedList;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.AtomicStampedReference;
 import java.util.concurrent.locks.ReentrantLock;
 
 
@@ -40,6 +42,7 @@ public class HashedDeque {
 	
 	public void addRight(){
 		try{
+			
 			acquiringSafeLock();
 			ElementDeque tempBucket =  new ElementDeque();
 			tempBucket.setPosition(rIndex.getRbucket().getPosition());
